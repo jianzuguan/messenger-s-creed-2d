@@ -9,13 +9,14 @@ public class npc : MonoBehaviour {
 	public int indx;
 	public Text txt;
 	public Text name_txt;
-	private GameObject panel;
+	public GameObject panel;
+
 	// Use this for initialization
 	void Start () {
 		//txt = GameObject.FindGameObjectWithTag ("conv_holder").guiText;
 		//name_txt = GameObject.FindGameObjectWithTag ("npc_name").guiText;
 		indx=0;
-		panel = GameObject.FindGameObjectWithTag ("panel3");
+		//panel = GameObject.FindGameObjectWithTag ("panel3");
 	}
 	
 	// Update is called once per frame
