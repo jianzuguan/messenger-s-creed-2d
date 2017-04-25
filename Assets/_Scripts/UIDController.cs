@@ -42,7 +42,7 @@ public class UIDController : MonoBehaviour {
 
     public bool HasItem(InventoryItem targetItem) {
         foreach (InventoryItem iItem in inventory) {
-            if (iItem.itemName == targetItem.itemName) {
+            if (iItem.itemName == targetItem.itemName && iItem.itemCount >= targetItem.itemCount) {
                 return true;
             }
         }
@@ -63,13 +63,7 @@ public class UIDController : MonoBehaviour {
         inventory.Add(newItem);
         RefreshUID();
     }
-	public bool HasItem(InventoryItem targetItem,int ItemNumber){
-		foreach (InventoryItem iItem in inventory) {
-			if (iItem.itemName == targetItem.itemName && iItem.itemCount >= ItemNumber) {
-				return true;}
-		}
-		return false;
-	}
+
     public bool DeleteItem(InventoryItem targetItem) {
         for (int i = 0; i < inventory.Count; i++) {
             InventoryItem iItem = inventory[i];
