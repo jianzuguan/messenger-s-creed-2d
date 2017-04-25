@@ -8,6 +8,7 @@ TagManager:
   - panel3
   - npc_name
   - conv_holder
+  - Ground
   layers:
   - Default
   - TransparentFX

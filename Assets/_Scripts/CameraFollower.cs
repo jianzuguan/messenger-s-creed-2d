@@ -45,9 +45,11 @@ public class CameraFollower : MonoBehaviour {
     void LateUpdate() {
         offset = transform.position - player.transform.position;
         if (transform.position.x < xMax && offset.x < -5) {
+            // Move right
             x = player.transform.position.x - 5;
             transform.position = new Vector3(x, y, z);
         } else if (canGoBack && transform.position.x > xMin && offset.x > 5) {
+            // Move left
             x = player.transform.position.x + 5;
             transform.position = new Vector3(x, y, z);
         }
