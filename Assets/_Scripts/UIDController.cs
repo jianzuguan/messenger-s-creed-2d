@@ -40,6 +40,15 @@ public class UIDController : MonoBehaviour {
         
     }
 
+    public bool HasItem(InventoryItem targetItem) {
+        foreach (InventoryItem iItem in inventory) {
+            if (iItem.itemName == targetItem.itemName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void AddItem(InventoryItem newItem) {
         // Add one to exsiting item
         foreach (InventoryItem iItem in inventory) {
