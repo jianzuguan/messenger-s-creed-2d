@@ -15,9 +15,21 @@ public class npc : MonoBehaviour {
 	public bool iSActivated;
 	public int current_state;
 	public bool mission_comp;
+	private Item mission_require_sc;
+	private InventoryItem mission_require;
+	private UIDController sc;
+	public string NeededItem;
+	public int NeededNumber;
+	private GameObject item_script1;
 	// Use this for initialization
 	void Start () {
 		current_state = 0;
+		GameObject item_script = GameObject.Find ("CanvasUID");
+		sc = item_script.GetComponent<UIDController> ();
+		if(item_script1 = GameObject.Find (NeededItem)){Debug.Log("succ");}
+		Item mission_require_sc = item_script1.GetComponent<Item> ();
+		//mission_require_sc = item_script1.GetComponent<Item> ();
+		mission_require=mission_require_sc.the_item;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +40,10 @@ public class npc : MonoBehaviour {
 			npc_next_dia (current_state);
 		}
 
+	}
+	public void is_mission_complete(){
+		mission_comp = true ? sc.HasItem (mission_require,NeededNumber) : false;
+		//mission_comp = true ? sc.DeleteItem (mission_require) : false;
 	}
 	private void npc_next_dia(int cur_state){
 		switch (cur_state) {
@@ -64,7 +80,10 @@ public class npc : MonoBehaviour {
 			name_txt.text = npc_name;
 			indx++;
 		} else {
+			//take item from backpack
+			//flush backbak
 			current_state=2;
+			sc.DeleteItem (mission_require);
 			throw_panel();
 		}
 	
@@ -86,6 +105,7 @@ public class npc : MonoBehaviour {
 
 			panel.SetActive (true);
 			indx = 0;
+			is_mission_complete ();
 			if (mission_comp&&current_state!=2) {
 				current_state = 1;
 			}
