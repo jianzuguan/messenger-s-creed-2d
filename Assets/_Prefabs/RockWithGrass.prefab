@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4595338362270922}
   - component: {fileID: 212711817039701600}
   - component: {fileID: 61247064508066512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RockWithGrass
   m_TagString: Ground
   m_Icon: {fileID: 0}
