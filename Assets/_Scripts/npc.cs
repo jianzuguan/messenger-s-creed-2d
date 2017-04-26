@@ -51,7 +51,10 @@ public class npc : MonoBehaviour {
 	public void is_mission_complete(){
         //mission_comp = true ? sc.HasItem (mission_require,NeededNumber) : false;
         //mission_comp = true ? sc.DeleteItem (mission_require) : false;
-        mission_comp = sc.HasItem(itemNeeded[0]);
+		mission_comp=true;
+		foreach (InventoryItem iterator_item in itemNeeded) {
+			mission_comp &= sc.HasItem (iterator_item);
+		}
 	}
 	private void npc_next_dia(int cur_state){
 		switch (cur_state) {
@@ -92,7 +95,11 @@ public class npc : MonoBehaviour {
 			//flush backbak
 			current_state=2;
             //sc.DeleteItem (mission_require);
-            sc.DeleteItem(itemNeeded[0]);
+			Trade();
+			//foreach (InventoryItem iterator_item in itemNeeded) {
+				
+			//	sc.DeleteItem (iterator_item);
+			//}
             throw_panel();
 		}
 	
@@ -138,6 +145,12 @@ public class npc : MonoBehaviour {
         //sc.AddItem(itemTrades[0]);
         // Take gold from player
         //sc.DeleteItem(itemTrades[1]);
-        
+		foreach (InventoryItem iterator_item in itemNeeded) {
+
+			sc.DeleteItem (iterator_item);
+		}
+		foreach (InventoryItem it in itemToGive) {
+			sc.AddItem (it);
+		}
     }
 }
