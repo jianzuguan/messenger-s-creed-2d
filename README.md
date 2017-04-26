@@ -11,3 +11,4 @@
 ### Assets from external site
 - [RPG MAKER XP Sprite - Angel England](http://pianodream.deviantart.com/art/RPG-MAKER-XP-Sprite-Angel-England-293178294)
 - [Spinning Gold Coin](https://opengameart.org/content/spinning-gold-coin)
+- [Frankenstein](https://www.spriters-resource.com/snes/zombiesneighbours/sheet/31836/) included
