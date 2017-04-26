@@ -15,22 +15,29 @@ public class npc : MonoBehaviour {
 	public bool iSActivated;
 	public int current_state;
 	public bool mission_comp;
-	private Item mission_require_sc;
-	private InventoryItem mission_require;
-	private UIDController sc;
-	public string NeededItem;
-	public int NeededNumber;
+    //private Item mission_require_sc;
+    //private InventoryItem mission_require;
+    public UIDController sc;
+    //public string NeededItem;
+    //public int NeededNumber;
+    public List<InventoryItem> itemNeeded;
+    // Index for
+    // 0 Item to sell
+    // 1 Item sell for (gold)
+    //public List<InventoryItem> itemTrades;
+    public List<InventoryItem> itemToGive;
+
 	private GameObject item_script1;
 	// Use this for initialization
 	void Start () {
 		current_state = 0;
 		GameObject item_script = GameObject.Find ("CanvasUID");
-		sc = item_script.GetComponent<UIDController> ();
-		if(item_script1 = GameObject.Find (NeededItem)){Debug.Log("succ");}
-		Item mission_require_sc = item_script1.GetComponent<Item> ();
-		//mission_require_sc = item_script1.GetComponent<Item> ();
-		mission_require=mission_require_sc.the_item;
-	}
+        sc = item_script.GetComponent<UIDController>();
+        //if(item_script1 = GameObject.Find (NeededItem)){Debug.Log("succ");}
+        //Item mission_require_sc = item_script1.GetComponent<Item> ();
+        //mission_require_sc = item_script1.GetComponent<Item> ();
+        //mission_require=mission_require_sc.the_item;
+    }
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.P) && panel.activeSelf && iSActivated) {
@@ -42,8 +49,9 @@ public class npc : MonoBehaviour {
 
 	}
 	public void is_mission_complete(){
-		mission_comp = true ? sc.HasItem (mission_require,NeededNumber) : false;
-		//mission_comp = true ? sc.DeleteItem (mission_require) : false;
+        //mission_comp = true ? sc.HasItem (mission_require,NeededNumber) : false;
+        //mission_comp = true ? sc.DeleteItem (mission_require) : false;
+        mission_comp = sc.HasItem(itemNeeded[0]);
 	}
 	private void npc_next_dia(int cur_state){
 		switch (cur_state) {
@@ -83,8 +91,9 @@ public class npc : MonoBehaviour {
 			//take item from backpack
 			//flush backbak
 			current_state=2;
-			sc.DeleteItem (mission_require);
-			throw_panel();
+            //sc.DeleteItem (mission_require);
+            sc.DeleteItem(itemNeeded[0]);
+            throw_panel();
 		}
 	
 	}
@@ -123,4 +132,12 @@ public class npc : MonoBehaviour {
 		iSActivated = false;
 	}
 
+
+    public void Trade() {
+        // Give item to player
+        //sc.AddItem(itemTrades[0]);
+        // Take gold from player
+        //sc.DeleteItem(itemTrades[1]);
+        
+    }
 }
