@@ -18,6 +18,8 @@ public class npc : MonoBehaviour {
     //private Item mission_require_sc;
     //private InventoryItem mission_require;
     public UIDController sc;
+	public Image panel_sprite;
+	public Sprite npc_sprite;
     //public string NeededItem;
     //public int NeededNumber;
     public List<InventoryItem> itemNeeded;
@@ -121,6 +123,8 @@ public class npc : MonoBehaviour {
 
 			panel.SetActive (true);
 			indx = 0;
+			panel_sprite.sprite = npc_sprite;
+			//panel_sprite.transform.GetChild(0).GetComponent<Image>.overrideSprite =npc_sprite;
 			is_mission_complete ();
 			if (mission_comp&&current_state!=2) {
 				current_state = 1;
