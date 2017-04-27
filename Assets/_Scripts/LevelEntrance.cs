@@ -37,7 +37,9 @@ public class LevelEntrance : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
-            if (finalDayCheck.isFinalDay && uidCtl.totalNameFound >= numOfNameNeeded) {
+            if (finalDayCheck != null && finalDayCheck.isFinalDay && 
+                uidCtl != null && uidCtl.totalNameFound >= numOfNameNeeded) {
+
                 farWest = dwarfFarWest;
                 farEast = dwarfFarEast;
                 cameraPoint = dwarfCameraPoint;
