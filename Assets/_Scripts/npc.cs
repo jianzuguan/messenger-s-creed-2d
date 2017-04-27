@@ -42,7 +42,7 @@ public class npc : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyUp (KeyCode.P) && panel.activeSelf && iSActivated) {
+		if (Input.GetKeyUp (KeyCode.J) && panel.activeSelf && iSActivated) {
 			if (mission_comp&&current_state!=2) {
 				current_state = 1;
 			}
