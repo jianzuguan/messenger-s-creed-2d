@@ -9,6 +9,9 @@ public class UIDController : MonoBehaviour {
     public GameObject inventoryContainer;
     public GameObject itemUIPrefab;
 
+    [Header("Debug")]
+    public int totalNameFound = 0;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -49,6 +52,10 @@ public class UIDController : MonoBehaviour {
     }
 
     public void AddItem(InventoryItem newItem) {
+        // Accumulate name amount
+        if (newItem.itemName == "Name") {
+            totalNameFound += newItem.itemCount;
+        }
         // Add one to exsiting item
         foreach (InventoryItem iItem in inventory) {
             if (iItem.itemName == newItem.itemName) {
