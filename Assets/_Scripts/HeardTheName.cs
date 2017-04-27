@@ -20,6 +20,7 @@ public class HeardTheName : MonoBehaviour {
     void Update() {
         if (player != null) {
             if (GetComponent<npc>().indx == GetComponent<npc>().convs1.Count) {
+                player.GetComponent<IFoundFinalName>().hasFinalName = true;
                 player.GetComponent<Platformer2DUserControl>().enabled = true;
                 gameObject.SetActive(false);
                 canvasConvo.SetActive(false);
