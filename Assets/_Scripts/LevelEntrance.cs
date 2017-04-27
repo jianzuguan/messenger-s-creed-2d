@@ -26,6 +26,7 @@ public class LevelEntrance : MonoBehaviour {
             camera.GetComponent<CameraFollower>().RefreshBoundary(farWest, farEast, cameraPoint);
 
             camera.transform.position = cameraPoint.position;
+            player.GetComponent<NeverFallOff>().SetCurrentHeght(playerPoint.position.y);
             player.transform.position = playerPoint.position;
 
         }
