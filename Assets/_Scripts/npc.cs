@@ -8,7 +8,7 @@ public class npc : MonoBehaviour {
 	public List<string> convs;
 	public List<string> convs1;
 	public List<string> convs2;
-	private int indx;
+	public int indx;
 	public Text txt;
 	public Text name_txt;
 	public GameObject panel;
