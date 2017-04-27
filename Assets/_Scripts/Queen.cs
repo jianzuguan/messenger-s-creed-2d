@@ -105,7 +105,7 @@ public class Queen : MonoBehaviour {
                 Debug.Log("Bad End");
                 SceneManager.LoadScene("_Scenes/3Badend");
             }
-        } else if (dayIndex % 2 != 0) {
+        } else if (dayIndex < convo.Count - 2 && dayIndex % 2 != 0) {
             StartCoroutine(NextDay());
         } else {
             dialogPanel.SetActive(false);
