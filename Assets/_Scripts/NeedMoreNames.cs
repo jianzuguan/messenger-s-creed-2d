@@ -19,33 +19,42 @@ public class NeedMoreNames : MonoBehaviour {
     public string speakerName;
     public string speech;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [Header("Debug")]
+    public GameObject player;
+
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (player != null && Input.GetKeyUp(KeyCode.J)) {
+            dialog.SetActive(false);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
+            player = collision.gameObject;
+
             foreach (InventoryItem iItem in uidCtl.inventory) {
                 if (iItem.itemName == "Name" && iItem.itemCount >= amountOfNameNeeded) {
+                    dialog.SetActive(false);
                     gameObject.SetActive(false);
-                } else {
-                    speakerIconContainer.sprite = speakerIcon;
-                    speakerNameContainer.text = speakerName;
-                    speechContainer.text = speech;
-                    dialog.SetActive(true);
+                    return;
                 }
             }
+            speakerIconContainer.sprite = speakerIcon;
+            speakerNameContainer.text = speakerName;
+            speechContainer.text = speech;
+            dialog.SetActive(true);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
+            player = null;
             dialog.SetActive(false);
         }
     }
