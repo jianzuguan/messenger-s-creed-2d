@@ -7,17 +7,20 @@ using UnityStandardAssets._2D;
 public class Queen : MonoBehaviour {
     public string characterName = "Queen";
 
+    public int dayIndex = 0;
+    public int convoIndex = 0;
     public List<List<string>> convo = new List<List<string>>();
     public List<string> convoDay0Morning = new List<string>();
     public List<string> convoDay0Evening = new List<string>();
     public List<string> convoDay1Morning = new List<string>();
     public List<string> convoDay1Evening = new List<string>();
     public List<string> convoDay2Morning = new List<string>();
-    public List<string> convoDay2Evening = new List<string>();
-    public List<string> convoDay3Morning = new List<string>();
-    public List<string> convoDay3Evening = new List<string>();
-    public int dayIndex = 0;
-    public int convoIndex = 0;
+    //public List<string> convoDay2Evening = new List<string>();
+    //public List<string> convoDay3Morning = new List<string>();
+    //public List<string> convoDay3Evening = new List<string>();
+    public List<string> convoGrantDeath = new List<string>();
+    public List<string> convoGrantWealth = new List<string>();
+
 
     public GameObject dialogPanel;
     public Text dialogName;
@@ -39,32 +42,39 @@ public class Queen : MonoBehaviour {
         convo.Add(convoDay1Morning);
         convo.Add(convoDay1Evening);
         convo.Add(convoDay2Morning);
-        convo.Add(convoDay2Evening);
-        convo.Add(convoDay3Morning);
-        convo.Add(convoDay3Evening);
+        //convo.Add(convoDay2Evening);
+        //convo.Add(convoDay3Morning);
+        //convo.Add(convoDay3Evening);
+        convo.Add(convoGrantDeath);
+        convo.Add(convoGrantWealth);
     }
 
     // Update is called once per frame
     void Update() {
         if (player != null && Input.GetKeyUp(KeyCode.J)) {
-            ConvoNextLine();
+            NextConvoLine();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
-            if (dayIndex % 2 == 1) {
+            player = collision.gameObject;
+
+            if (dayIndex >= convo.Count - 2) {
+                return;
+            }
+
+//            if (dayIndex % 2 == 1) {
                 foreach (InventoryItem iItem in uidCtl.inventory) {
                     if (iItem.itemName == "Name") {
                         uidCtl.DeleteItem(iItem);
                         break;
                     }
                 }
-            }
-            player = collision.gameObject;
+//          }
             dialogName.text = characterName;
             dialogConvo.text = convo[dayIndex][convoIndex];
-            //UpdateConvoIndex();
+            //NextConvoIndex();
             dialogPanel.SetActive(true);
         }
     }
@@ -77,24 +87,16 @@ public class Queen : MonoBehaviour {
         }
     }
 
-
-
-    private void UpdateConvoIndex() {
-        if (convoIndex < convo[dayIndex].Count - 1) {
-            convoIndex++;
-        } else {
-            convoIndex = 0;
-        }
-    }
-
-    public void DayIncrementOne() {
-        dayIndex++;
-    }
-
-    public void ConvoNextLine() {
-        UpdateConvoIndex();
+    public void NextConvoLine() {
+        NextConvoIndex();
         if (convoIndex != 0) {
             dialogConvo.text = convo[dayIndex][convoIndex];
+        } else if (dayIndex >= convo.Count - 2) {
+            // Ending with queen
+            // Good end
+            Debug.Log("Good End");
+            // Bad end
+            Debug.Log("Bad End");
         } else if (dayIndex % 2 != 0) {
             StartCoroutine(NextDay());
         } else {
@@ -102,18 +104,46 @@ public class Queen : MonoBehaviour {
         }
     }
 
+    private void NextConvoIndex() {
+        if (convoIndex < convo[dayIndex].Count - 1) {
+            convoIndex++;
+        } else {
+            convoIndex = 0;
+        }
+    }
+
     IEnumerator NextDay(float time = 2) {
         dialogPanel.SetActive(false);
         night.SetActive(true);
+
+        GameObject playerGB = player;
 
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(time);
         Time.timeScale = 1;
 
-        player.transform.position += new Vector3(-5, 0, 0);
-        player.GetComponent<PlatformerCharacter2D>().Move(1, false, false);
+        playerGB.transform.position = new Vector3(5, 1, 0);
+        playerGB.GetComponent<PlatformerCharacter2D>().Move(1, false, false);
 
         DayIncrementOne();
         night.SetActive(false);
     }
+    
+    public void DayIncrementOne() {
+        dayIndex++;
+    }
+
+    // Heard story of dwarf dancing and singing
+    public void HeardFinalName(bool heard) {
+        if (heard) {
+            dayIndex = convo.Count - 1;
+        } else {
+            dayIndex = convo.Count - 2;
+        }
+
+        dialogName.text = characterName;
+        dialogConvo.text = convo[dayIndex][convoIndex];
+        dialogPanel.SetActive(true);
+    }
+
 }

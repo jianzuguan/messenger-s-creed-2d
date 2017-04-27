@@ -854,6 +854,7 @@ GameObject:
   - component: {fileID: 618299182}
   - component: {fileID: 618299181}
   - component: {fileID: 618299180}
+  - component: {fileID: 618299188}
   m_Layer: 0
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -1027,6 +1028,31 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0030198097, y: 0.039261103}
   m_Size: {x: 0.3058897, y: 1.2964778}
   m_Direction: 0
+--- !u!114 &618299188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618299178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056d4d3ae9c258a49a0185c3798f8a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Messenger
+  dialogPanel: {fileID: 1096807287}
+  dialogName: {fileID: 1972509516}
+  dialogConvo: {fileID: 973375919}
+  convo:
+  - I have found a droll-looking little man
+  - 'He dance and sings:'
+  - " \u201CMerrily the feast I\u2019ll make.   Today I\u2019ll brew, tomorrow bake;
+    \  Merrily I\u2019ll dance and sing,   For next day will a stranger bring.   Little
+    does my lady dream   Rumpelstiltskin is my name!\u201D"
+  convoIndex: 0
+  isFinalDay: 0
+  hasFinalName: 0
+  queen: {fileID: 0}
 --- !u!1 &656906898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queen: {fileID: 2119419981}
+  day: 0
 --- !u!1 &1231901183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3095,7 @@ GameObject:
   - component: {fileID: 2119419981}
   m_Layer: 0
   m_Name: Queen
-  m_TagString: Untagged
+  m_TagString: Queen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3098,6 +3125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Queen
+  dayIndex: 0
+  convoIndex: 0
   convoDay0Morning:
   - You have been summoned to gather wired name around the world.
   - You must come before nightfall.
@@ -3108,15 +3137,16 @@ MonoBehaviour:
   - 'The names you found yesterday doesn''t suit my need. '
   - Go find some more.
   convoDay1Evening:
-  - I hopel these have a right one.
+  - I hope these have a right one.
   convoDay2Morning:
-  - I need more names.
-  convoDay2Evening:
-  - Let me give these a try.
-  convoDay3Morning: []
-  convoDay3Evening: []
-  dayIndex: 0
-  convoIndex: 0
+  - Ok, I am looking for dwarf's name.
+  - If you find his name, I will grant you wealth.
+  - If you don't, I will grant you death.
+  convoGrantDeath:
+  - It seems like you didn't find the name I was looking for. I'm sorry.
+  convoGrantWealth:
+  - THAT IS THE ONE!
+  - I will keep my promise and you may leave now.
   dialogPanel: {fileID: 1096807287}
   dialogName: {fileID: 1972509516}
   dialogConvo: {fileID: 973375919}

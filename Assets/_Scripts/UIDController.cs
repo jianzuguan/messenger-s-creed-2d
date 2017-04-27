@@ -9,7 +9,6 @@ public class UIDController : MonoBehaviour {
     public GameObject inventoryContainer;
     public GameObject itemUIPrefab;
 
-
 	// Use this for initialization
 	void Start () {
 		

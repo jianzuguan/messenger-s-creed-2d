@@ -9,6 +9,7 @@ TagManager:
   - npc_name
   - conv_holder
   - Ground
+  - Queen
   layers:
   - Default
   - TransparentFX
