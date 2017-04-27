@@ -6,7 +6,8 @@ using UnityStandardAssets._2D;
 
 public class Queen : MonoBehaviour {
     public string characterName = "Queen";
-
+	public Image panel_sprite;
+	public Sprite npc_sprite;
     public int dayIndex = 0;
     public int convoIndex = 0;
     public List<List<string>> convo = new List<List<string>>();
@@ -57,6 +58,7 @@ public class Queen : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+		panel_sprite.sprite = npc_sprite;
         if (collision.gameObject.tag == "Player") {
             player = collision.gameObject;
 
