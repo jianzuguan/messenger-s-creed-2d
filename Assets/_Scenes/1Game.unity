@@ -178,8 +178,8 @@ MonoBehaviour:
   - 'Woman: but i hope they''d never find it'
   - 'Man: Shh.... there is someone outside, stop talking about the royal.'
   convs2:
-  - 'Woman: can''t you do some houswork?'
-  - 'Men: never!'
+  - 'Woman: can''t you do some housework?'
+  - 'Man: never!'
   indx: 0
   txt: {fileID: 1554699971}
   name_txt: {fileID: 1682442711}
@@ -1594,13 +1594,13 @@ MonoBehaviour:
   npc_name: Grape Farmer
   convs:
   - hey warrior
-  - can you help me grab the grape vines there, i can jump that high
-  - i will give you a [name] and some home-made [wine] as return
+  - can you help me grab the grape vines there, i can't jump that high
+  - i will give you a name and some home-made wine as return
   convs1:
   - glad to see you carrying the vine
   - thanks a lot, warrior
   convs2:
-  - seeds grapes wine.... lalalala
+  - seeds, grapes, wine.... lalalala
   indx: 0
   txt: {fileID: 1554699971}
   name_txt: {fileID: 1682442711}
@@ -1717,9 +1717,9 @@ MonoBehaviour:
   convs: []
   convs1:
   - oh, you work for the royal government?
-  - what a tough mission they gave to you
-  - i will give you some [gold] to let you start with you mission
-  - as well as a strange [name] that i know
+  - what a tough mission they've given to you
+  - i will give you some gold to let you start with you mission
+  - as well as a strange name that i know
   - good luck
   convs2:
   - God bless you
@@ -6249,15 +6249,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc_name: Frankenstein
   convs:
-  - hey, some random passing-by
+  - hey, some random pasing-by
   - i have a idea for new invention
-  - can you give me 500 gold, one match sticker and pieces of metal to start up my
-    project?
-  - i will give you a name which u've been looking for these days
+  - can you give me 500 gold, one match sticker and some pieces of metal to start
+    up my project?
+  - i will give you a name which you've been looking for these days
   convs1:
-  - wanna trade name with wine?
-  - aha, ty young man
-  - the name i dreamt about was Jack
+  - wanna trade name with gold, match and metal?
+  - aha, thanks a lot.
+  - ugh..the name i was talking about is Frankenstein
   convs2:
   - i have so many patents, ahahaha
   indx: 0
@@ -6466,11 +6466,11 @@ MonoBehaviour:
   npc_name: Boy
   convs:
   - match stiker on sale
-  - 500 gold for one box
+  - 500 gold for a box
   - the royal family uses all trees to build their own palace, wood is expensive nowadays
   convs1:
-  - 500 gold, one sticker, deal?
-  - here you go, i will give a extra [name] for bonus
+  - 500 gold, one box of match, deal?
+  - here you go, i will give an extra name as bonus
   convs2:
   - skytown needs hero
   indx: 0
@@ -8138,17 +8138,17 @@ MonoBehaviour:
   npc_name: Witcher
   convs:
   - ohohoho, you little lost lamb
-  - Ok i just want to make myself look mysterious
-  - 500 gold for a divination, you can get one [name] from me
+  - Ok, i have to admit, just want to make myself look mysterious
+  - 500 gold for a divination, you can get one name from me
   - ye, that's expensive i agree
   - the royal government charges insanely high tax on us
-  - come yo me when you get enough gold.
+  - come to me when you get enough gold.
   convs1:
-  - oh, you little billionare
+  - oh, you little billionaire
   - ready for the divination?
   - woo,woo,woo,la,la,la %&*%%$#!!##
   - oh, there is something a the crystal ball
-  - aha, here you go, the [name] i saw is Tommy
+  - aha, here you go, the name is in your backpack
   convs2:
   - second hand crystal ball on sale..
   indx: 0
@@ -10694,16 +10694,16 @@ MonoBehaviour:
   dayIndex: 0
   convoIndex: 0
   convoDay0Morning:
-  - You have been summoned to gather wired name around the world.
+  - You have been summoned to gather weird name throughout the country
   - You must come before nightfall.
   convoDay0Evening:
   - Let's see what you've got.
   - 'Very well, you may leave now. '
   convoDay1Morning:
-  - 'The names you found yesterday doesn''t suit my need. '
-  - Go find some more.
+  - 'The names you found yesterday didn''t suit my need. '
+  - Go and find some more.
   convoDay1Evening:
-  - I hope these have a right one.
+  - I hope there is a right one in these.
   convoDay2Morning:
   - Ok, I am looking for dwarf's name.
   - If you find his name, I will grant you wealth.
@@ -12139,6 +12139,26 @@ Prefab:
       propertyPath: panel_sprite
       value: 
       objectReference: {fileID: 1420166146}
+    - target: {fileID: 114251178693360088, guid: b177159f542acd94e92c7c4951ea574b,
+        type: 2}
+      propertyPath: convs.Array.data[2]
+      value: bring me some wine and i will tell you those names
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251178693360088, guid: b177159f542acd94e92c7c4951ea574b,
+        type: 2}
+      propertyPath: convs1.Array.data[1]
+      value: aha, thank you young man
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251178693360088, guid: b177159f542acd94e92c7c4951ea574b,
+        type: 2}
+      propertyPath: convs1.Array.data[2]
+      value: the name i dreamt about is in your backpack now
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251178693360088, guid: b177159f542acd94e92c7c4951ea574b,
+        type: 2}
+      propertyPath: convs2.Array.data[0]
+      value: nice weather today humm?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b177159f542acd94e92c7c4951ea574b, type: 2}
   m_IsPrefabParent: 0
@@ -12642,7 +12662,7 @@ MonoBehaviour:
   - hi, the mankind
   - can you help me carry that rock to the tree?
   - i want use it to strengthen my nest
-  - i will tell you a rare [name] that i found in a mystic cave.
+  - i will tell you a rare name that i found in a mystic cave as return.
   convs1:
   - thank you
   - the name is included in you backpack
