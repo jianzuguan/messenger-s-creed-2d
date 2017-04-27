@@ -11,5 +11,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/02Joint.unity
   - enabled: 1
     path: Assets/_Scenes/0StartMenu.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/All In One.unity
