@@ -12478,6 +12478,12 @@ Prefab:
       propertyPath: convs2.Array.data[0]
       value: nice weather today humm?
       objectReference: {fileID: 0}
+    - target: {fileID: 114251178693360088, guid: b177159f542acd94e92c7c4951ea574b,
+        type: 2}
+      propertyPath: itemToGive.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: c6d3b52a15db9bf419a995a78fcf15b5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b177159f542acd94e92c7c4951ea574b, type: 2}
   m_IsPrefabParent: 0
