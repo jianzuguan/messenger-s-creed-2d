@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets._2D;
 
 public class Queen : MonoBehaviour {
     public string characterName = "Queen";
-	public Image panel_sprite;
-	public Sprite npc_sprite;
+    public Image panel_sprite;
+    public Sprite npc_sprite;
     public int dayIndex = 0;
     public int convoIndex = 0;
     public List<List<string>> convo = new List<List<string>>();
@@ -58,7 +59,7 @@ public class Queen : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-		panel_sprite.sprite = npc_sprite;
+        panel_sprite.sprite = npc_sprite;
         if (collision.gameObject.tag == "Player") {
             player = collision.gameObject;
 
@@ -66,14 +67,14 @@ public class Queen : MonoBehaviour {
                 return;
             }
 
-//            if (dayIndex % 2 == 1) {
-                foreach (InventoryItem iItem in uidCtl.inventory) {
-                    if (iItem.itemName == "Name") {
-                        uidCtl.DeleteItem(iItem);
-                        break;
-                    }
+            //            if (dayIndex % 2 == 1) {
+            foreach (InventoryItem iItem in uidCtl.inventory) {
+                if (iItem.itemName == "Name") {
+                    uidCtl.DeleteItem(iItem);
+                    break;
                 }
-//          }
+            }
+            //          }
             dialogName.text = characterName;
             dialogConvo.text = convo[dayIndex][convoIndex];
             //NextConvoIndex();
@@ -95,10 +96,15 @@ public class Queen : MonoBehaviour {
             dialogConvo.text = convo[dayIndex][convoIndex];
         } else if (dayIndex >= convo.Count - 2) {
             // Ending with queen
-            // Good end
-            Debug.Log("Good End");
-            // Bad end
-            Debug.Log("Bad End");
+            if (dayIndex == convo.Count - 1) {
+                // Good end
+                Debug.Log("Good End");
+                SceneManager.LoadScene("_Scenes/1Goodend");
+            } else {
+                // Bad end
+                Debug.Log("Bad End");
+                SceneManager.LoadScene("_Scenes/2Badend");
+            }
         } else if (dayIndex % 2 != 0) {
             StartCoroutine(NextDay());
         } else {
@@ -130,7 +136,7 @@ public class Queen : MonoBehaviour {
         DayIncrementOne();
         night.SetActive(false);
     }
-    
+
     public void DayIncrementOne() {
         dayIndex++;
     }
