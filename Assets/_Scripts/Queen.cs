@@ -99,11 +99,11 @@ public class Queen : MonoBehaviour {
             if (dayIndex == convo.Count - 1) {
                 // Good end
                 Debug.Log("Good End");
-                SceneManager.LoadScene("_Scenes/1Goodend");
+                SceneManager.LoadScene("_Scenes/2Goodend");
             } else {
                 // Bad end
                 Debug.Log("Bad End");
-                SceneManager.LoadScene("_Scenes/2Badend");
+                SceneManager.LoadScene("_Scenes/3Badend");
             }
         } else if (dayIndex % 2 != 0) {
             StartCoroutine(NextDay());

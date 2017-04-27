@@ -712,7 +712,7 @@ MonoBehaviour:
   farEast: {fileID: 1546930737}
   cameraPoint: {fileID: 1745698729}
   playerPoint: {fileID: 1907686994}
-  numOfNameNeeded: 3
+  numOfNameNeeded: 4
   uidCtl: {fileID: 1044939328}
   finalDayCheck: {fileID: 618299187}
   dwarfFarWest: {fileID: 465701884}
@@ -1282,6 +1282,7 @@ MonoBehaviour:
   - Oh, you work for the queen.
   - 'Forget about the queen, I can offer you unlimited gold. '
   - Come over.
+  - Come over.
   convs2: []
   indx: 0
   txt: {fileID: 1554699971}
@@ -1492,6 +1493,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   speakerName: Messenger
   speech: I need to find some names.
+  player: {fileID: 0}
 --- !u!61 &184096302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2501,7 +2503,7 @@ MonoBehaviour:
   farEast: {fileID: 1546930737}
   cameraPoint: {fileID: 1745698729}
   playerPoint: {fileID: 1907686994}
-  numOfNameNeeded: 3
+  numOfNameNeeded: 4
   uidCtl: {fileID: 1044939328}
   finalDayCheck: {fileID: 618299187}
   dwarfFarWest: {fileID: 465701884}
@@ -3068,7 +3070,7 @@ MonoBehaviour:
   farEast: {fileID: 1546930737}
   cameraPoint: {fileID: 1745698729}
   playerPoint: {fileID: 1907686994}
-  numOfNameNeeded: 3
+  numOfNameNeeded: 4
   uidCtl: {fileID: 1044939328}
   finalDayCheck: {fileID: 618299187}
   dwarfFarWest: {fileID: 465701884}
@@ -8164,6 +8166,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   speakerName: Messenger
   speech: I need to find some names.
+  player: {fileID: 0}
 --- !u!61 &1216494633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12823,6 +12826,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   speakerName: Messenger
   speech: I need to find some names.
+  player: {fileID: 0}
 --- !u!61 &1949783389
 BoxCollider2D:
   m_ObjectHideFlags: 0
