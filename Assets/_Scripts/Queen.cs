@@ -125,20 +125,22 @@ public class Queen : MonoBehaviour {
         night.SetActive(true);
 
         GameObject playerGB = player;
+        playerGB.transform.position = new Vector3(5, 1, 0);
+        playerGB.GetComponent<PlatformerCharacter2D>().Move(1, false, false);
 
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(time);
         Time.timeScale = 1;
 
-        playerGB.transform.position = new Vector3(5, 1, 0);
-        playerGB.GetComponent<PlatformerCharacter2D>().Move(1, false, false);
 
         DayIncrementOne();
         night.SetActive(false);
     }
 
     public void DayIncrementOne() {
-        dayIndex++;
+        if (dayIndex < 4) {
+            dayIndex++;
+        }
     }
 
     // Heard story of dwarf dancing and singing

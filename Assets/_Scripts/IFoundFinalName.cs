@@ -73,7 +73,7 @@ public class IFoundFinalName : MonoBehaviour {
         } else {
             dialogPanel.SetActive(false);
 
-            if (queen != null) {
+            if (isFinalDay && queen != null) {
                 queen.GetComponent<Queen>().HeardFinalName(hasFinalName);
             }
         }

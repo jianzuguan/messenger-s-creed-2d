@@ -634,7 +634,7 @@ MonoBehaviour:
   mission_comp: 0
   sc: {fileID: 1044939328}
   panel_sprite: {fileID: 1420166146}
-  npc_sprite: {fileID: 21300000, guid: e421c066cf6453545aed1e2d73087fc6, type: 3}
+  npc_sprite: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   itemNeeded: []
   itemToGive: []
 --- !u!61 &65844137
