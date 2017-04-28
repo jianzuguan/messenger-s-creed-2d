@@ -113,7 +113,7 @@ public class Queen : MonoBehaviour {
     }
 
     private void NextConvoIndex() {
-        if (convoIndex < convo[dayIndex].Count - 1) {
+        if (convoIndex < convo[dayIndex].Count - 2) {
             convoIndex++;
         } else {
             convoIndex = 0;

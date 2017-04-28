@@ -11047,22 +11047,29 @@ MonoBehaviour:
   convoDay0Morning:
   - You have been summoned to gather weird name throughout the country
   - You must come before nightfall.
+  - You must come before nightfall.
   convoDay0Evening:
   - Let's see what you've got.
+  - 'Very well, you may leave now. '
   - 'Very well, you may leave now. '
   convoDay1Morning:
   - 'The names you found yesterday didn''t suit my need. '
   - Go and find some more.
+  - Go and find some more.
   convoDay1Evening:
+  - I hope there is a right one in these.
   - I hope there is a right one in these.
   convoDay2Morning:
   - Ok, I am looking for dwarf's name.
   - If you find his name, I will grant you wealth.
   - If you don't, I will grant you death.
+  - If you don't, I will grant you death.
   convoGrantDeath:
+  - It seems like you didn't find the name I was looking for. I'm sorry.
   - It seems like you didn't find the name I was looking for. I'm sorry.
   convoGrantWealth:
   - THAT IS THE ONE!
+  - I will keep my promise and you may leave now.
   - I will keep my promise and you may leave now.
   dialogPanel: {fileID: 1402041926}
   dialogName: {fileID: 1682442711}
