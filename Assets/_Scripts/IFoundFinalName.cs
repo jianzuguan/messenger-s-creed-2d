@@ -59,7 +59,7 @@ public class IFoundFinalName : MonoBehaviour {
     }
 
     private void NextConvoIndex() {
-        if (convoIndex < convo.Count - 1) {
+        if (convoIndex < convo.Count - 2) {
             convoIndex++;
         } else {
             convoIndex = 0;

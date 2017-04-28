@@ -53,7 +53,7 @@ public class Queen : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (player != null && Input.GetKeyUp(KeyCode.J)) {
+        if (player != null && Input.GetKeyUp(KeyCode.J) && dialogPanel.activeSelf) {
             NextConvoLine();
         }
     }

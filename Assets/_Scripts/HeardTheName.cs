@@ -33,7 +33,8 @@ public class HeardTheName : MonoBehaviour {
             player = collision.gameObject;
             //playerSpeed = collision.gameObject.GetComponent<PlatformerCharacter2D>().m_MaxSpeed;
             //collision.gameObject.GetComponent<PlatformerCharacter2D>().m_MaxSpeed = 0f;
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            //collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            collision.gameObject.GetComponent<PlatformerCharacter2D>().Move(0, false, false);
             collision.gameObject.GetComponent<Platformer2DUserControl>().enabled = false;
             cameraMove.Play();
         }
