@@ -9,8 +9,11 @@ public class IFoundFinalName : MonoBehaviour {
     public string characterName = "Messenger";
 
     public GameObject dialogPanel;
+    public Image dialogIcon;
     public Text dialogName;
     public Text dialogConvo;
+
+    public Sprite characterIcon;
 
     public List<string> convo = new List<string>();
     public int convoIndex = 0;
@@ -36,8 +39,8 @@ public class IFoundFinalName : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Queen" && isFinalDay) {
             queen = collision.gameObject;
-            Debug.Log("trigger");
             if (hasFinalName) {
+                dialogIcon.sprite = characterIcon;
                 dialogName.text = characterName;
                 dialogConvo.text = convo[convoIndex];
                 dialogPanel.SetActive(true);

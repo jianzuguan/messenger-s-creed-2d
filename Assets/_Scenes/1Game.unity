@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bf3cae8238e474a89c608edec73aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasConvo: {fileID: 1806510053}
+  canvasConvo: {fileID: 1402041926}
   cameraMove: {fileID: 1947493819}
   player: {fileID: 0}
 --- !u!114 &176867128
@@ -2936,12 +2936,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843d42f06d414dd459287464b38891e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  player: {fileID: 0}
-  farWest: {fileID: 0}
-  farEast: {fileID: 0}
-  cameraPoint: {fileID: 0}
-  playerPoint: {fileID: 0}
+  camera: {fileID: 1947493816}
+  player: {fileID: 618299178}
+  farWest: {fileID: 15748094}
+  farEast: {fileID: 1546930737}
+  cameraPoint: {fileID: 1745698729}
+  playerPoint: {fileID: 1907686994}
   numOfNameNeeded: 0
   uidCtl: {fileID: 0}
   finalDayCheck: {fileID: 0}
@@ -4457,8 +4457,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Messenger
   dialogPanel: {fileID: 1402041926}
+  dialogIcon: {fileID: 1420166146}
   dialogName: {fileID: 1682442711}
   dialogConvo: {fileID: 1554699971}
+  characterIcon: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
   convo:
   - I have found a droll-looking little man
   - 'He dance and sings:'
